@@ -50,7 +50,7 @@ def print_banner():
     print(f"""
 {C.CYAN}{C.BOLD}
 ╔══════════════════════════════════════════════════════════╗
-║  🛡️   D E E P G U A R D   v1.0                          ║
+║  🛡️   D E F O R A G   v1.0                                ║
 ║       Sistem Forensik Deteksi Deepfake                   ║
 ║       EfficientNet-B4 | AUC: 98.56%                      ║
 ╚══════════════════════════════════════════════════════════╝
@@ -715,10 +715,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Contoh penggunaan:
-  python main.py --input foto.jpg
-  python main.py --input video.mp4 --report
-  python main.py --input foto.jpg --report --output ./hasil
-  python main.py --input foto.jpg --verbose
+  python deforag.py --input foto.jpg
+  python deforag.py --input video.mp4 --report
+  python deforag.py --input foto.jpg --report --output ./hasil
+  python deforag.py --input foto.jpg --verbose
         """
     )
     parser.add_argument('--input',    '-i', required=True,
