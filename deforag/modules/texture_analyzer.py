@@ -1,7 +1,7 @@
 """
 modules/texture_analyzer.py
 ----------------------------
-Modul analisis tekstur untuk DeepGuard.
+Modul analisis tekstur untuk DEFORAG.
 Mengimplementasikan teknik Steganalysis Rich Model (SRM) yang disederhanakan,
 analisis Local Binary Pattern (LBP), dan estimasi PRNU.
 

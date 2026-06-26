@@ -1,7 +1,7 @@
 """
 report/__init__.py
 ------------------
-Package initializer untuk modul report DeepGuard.
+Package initializer untuk modul report DEFORAG.
 Mengekspor kelas ForensicReportGenerator untuk kemudahan import.
 """
 

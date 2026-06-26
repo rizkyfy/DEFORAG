@@ -1,7 +1,7 @@
 """
 modules/gan_fingerprint.py
 --------------------------
-Modul analisis sidik jari GAN (Generative Adversarial Network) untuk DeepGuard.
+Modul analisis sidik jari GAN (Generative Adversarial Network) untuk DEFORAG.
 Mendeteksi artefak-artefak khas yang ditinggalkan oleh model GAN pada gambar.
 
 Teknik yang digunakan:

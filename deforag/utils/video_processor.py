@@ -8,7 +8,7 @@ Fitur utama:
   - Pengambilan metadata video (fps, durasi, dimensi)
   - Deteksi apakah suatu path adalah file video atau gambar
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 

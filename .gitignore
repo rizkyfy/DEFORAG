@@ -179,3 +179,12 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# --- DEFORAG Specific ignores ---
+# Hindari push model biner yang besar
+models/*.pth
+*.task
+
+# Hindari push folder pengujian dan hasil laporan lokal
+hasil forensik/
+foto_dan_video/

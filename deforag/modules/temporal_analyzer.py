@@ -1,7 +1,7 @@
 """
 modules/temporal_analyzer.py
 -----------------------------
-Modul analisis temporal untuk DeepGuard.
+Modul analisis temporal untuk DEFORAG.
 Menganalisis konsistensi temporal pada video untuk mendeteksi deepfake.
 
 Untuk gambar statis: mengembalikan skor netral dengan confidence rendah.

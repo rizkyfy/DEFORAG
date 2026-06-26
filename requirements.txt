@@ -1,5 +1,5 @@
 # ============================================================
-# DeepGuard — Requirements
+# DEFORAG — Requirements
 # Training Environment: Kaggle GPU (T4/P100)
 # ============================================================
 

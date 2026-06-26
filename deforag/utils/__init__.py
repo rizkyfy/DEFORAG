@@ -1,4 +1,4 @@
-"""DeepGuard Utilities"""
+"""DEFORAG Utilities"""
 from .face_extractor import FaceExtractor
 from .video_processor import VideoProcessor
 from .visualizer import Visualizer

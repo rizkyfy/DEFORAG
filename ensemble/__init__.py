@@ -1,7 +1,7 @@
 """
 ensemble/__init__.py
 --------------------
-Package initializer untuk modul ensemble DeepGuard.
+Package initializer untuk modul ensemble DEFORAG.
 Mengekspor kelas EnsembleVoter untuk kemudahan import.
 """
 

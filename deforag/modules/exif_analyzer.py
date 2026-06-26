@@ -1,7 +1,7 @@
 """
 modules/exif_analyzer.py
 ------------------------
-Modul analisis metadata EXIF untuk DeepGuard.
+Modul analisis metadata EXIF untuk DEFORAG.
 Memeriksa metadata gambar untuk mendeteksi tanda-tanda manipulasi atau pembuatan
 menggunakan perangkat lunak AI/editing.
 

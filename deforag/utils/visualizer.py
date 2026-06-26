@@ -9,7 +9,7 @@ Menyediakan fungsi untuk:
   - Overlay bounding box wajah pada gambar
   - Menyimpan ringkasan visualisasi ke direktori output
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 
@@ -389,7 +389,7 @@ class Visualizer:
         image_path : str | Path
             Path file gambar/video yang dianalisis (untuk penamaan output).
         results : dict
-            Hasil analisis dari DeepGuard. Harus memiliki key:
+            Hasil analisis dari DEFORAG. Harus memiliki key:
             - ``verdict``    : str, 'FAKE' atau 'REAL'
             - ``score``      : float, skor gabungan 0–1
             - ``confidence`` : float, keyakinan 0–1
@@ -407,7 +407,7 @@ class Visualizer:
         # Tentukan nama file output berdasarkan timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         stem = image_path.stem[:30]  # Batasi panjang nama file
-        out_filename = f"deepguard_{stem}_{timestamp}.png"
+        out_filename = f"deforag_{stem}_{timestamp}.png"
         out_path = output_dir / out_filename
 
         try:
@@ -491,7 +491,7 @@ class Visualizer:
 
             # Watermark
             cv2.putText(
-                text_panel, "DeepGuard v1.0",
+                text_panel, "DEFORAG v1.0",
                 (20, display_size[1] - 15),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.45, (80, 80, 120), 1, cv2.LINE_AA

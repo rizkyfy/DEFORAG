@@ -17,7 +17,7 @@ mata manusia namun dapat dideteksi secara matematis.
 Skor mendekati 1.0 → lebih mencurigakan (FAKE)
 Skor mendekati 0.0 → lebih natural (REAL)
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.1.0  (MediaPipe Tasks API — kompatibel 0.10.x+)
 """
 
@@ -100,16 +100,16 @@ except ImportError:
     )
 
 # ---------------------------------------------------------------------------
-# Import utilitas DeepGuard
+# Import utilitas DEFORAG
 # ---------------------------------------------------------------------------
 try:
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 except ImportError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 
 
 # ===========================================================================

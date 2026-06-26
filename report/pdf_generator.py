@@ -1,7 +1,7 @@
 """
 report/pdf_generator.py
 ------------------------
-Generator laporan PDF forensik untuk DeepGuard.
+Generator laporan PDF forensik untuk DEFORAG.
 Menghasilkan laporan forensik digital profesional dalam Bahasa Indonesia
 menggunakan pustaka ReportLab.
 
@@ -414,7 +414,7 @@ def _build_module_table(
 
 class ForensicReportGenerator:
     """
-    Menghasilkan laporan forensik digital PDF yang profesional untuk DeepGuard.
+    Menghasilkan laporan forensik digital PDF yang profesional untuk DEFORAG.
 
     Laporan mencakup:
     - Header profesional dengan nomor laporan
@@ -479,7 +479,7 @@ class ForensicReportGenerator:
             output_dir_path.mkdir(parents=True, exist_ok=True)
 
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_filename = f"deepguard_report_{timestamp}.pdf"
+            output_filename = f"deforag_report_{timestamp}.pdf"
             output_path = output_dir_path / output_filename
 
             # --- Inisialisasi dokumen ---
@@ -491,7 +491,7 @@ class ForensicReportGenerator:
                 topMargin=MARGIN,
                 bottomMargin=MARGIN,
                 title="Laporan Forensik Digital - Analisis Deepfake",
-                author="DeepGuard v1.0",
+                author="DEFORAG v1.0",
                 subject="Forensic Analysis Report",
             )
 
@@ -571,7 +571,7 @@ class ForensicReportGenerator:
             ],
             [
                 Paragraph(
-                    f"DeepGuard v1.0 &nbsp;|&nbsp; No. Laporan: {report_number} "
+                    f"DEFORAG v1.0 &nbsp;|&nbsp; No. Laporan: {report_number} "
                     f"&nbsp;|&nbsp; {now.strftime('%d %B %Y, %H:%M WIB')}",
                     styles["header_subtitle"],
                 ),
@@ -969,7 +969,7 @@ class ForensicReportGenerator:
         # Kesimpulan berdasarkan verdict
         if verdict.upper() == "FAKE":
             conclusion_text = (
-                f"Berdasarkan analisis komputasional yang dilakukan oleh sistem DeepGuard v1.0 "
+                f"Berdasarkan analisis komputasional yang dilakukan oleh sistem DEFORAG v1.0 "
                 f"terhadap berkas media <i>{file_name}</i>, diperoleh kesimpulan bahwa media "
                 f"tersebut mengandung indikasi kuat sebagai konten palsu atau hasil manipulasi "
                 f"digital (deepfake). Skor risiko gabungan sebesar {_format_score_percent(final_score)} "
@@ -987,7 +987,7 @@ class ForensicReportGenerator:
             ]
         elif verdict.upper() == "SUSPICIOUS":
             conclusion_text = (
-                f"Analisis komputasional DeepGuard v1.0 terhadap berkas <i>{file_name}</i> "
+                f"Analisis komputasional DEFORAG v1.0 terhadap berkas <i>{file_name}</i> "
                 f"menghasilkan skor risiko {_format_score_percent(final_score)} dengan tingkat "
                 f"kepercayaan {_format_score_percent(confidence)}. Media ini dikategorikan sebagai "
                 f"<b>MENCURIGAKAN</b> dengan level risiko <b>{risk_level}</b>. "
@@ -1005,7 +1005,7 @@ class ForensicReportGenerator:
             ]
         else:
             conclusion_text = (
-                f"Hasil analisis komputasional DeepGuard v1.0 terhadap berkas <i>{file_name}</i> "
+                f"Hasil analisis komputasional DEFORAG v1.0 terhadap berkas <i>{file_name}</i> "
                 f"menunjukkan bahwa media ini kemungkinan besar merupakan konten <b>ASLI</b>. "
                 f"Skor risiko {_format_score_percent(final_score)} dengan tingkat kepercayaan "
                 f"{_format_score_percent(confidence)} menempatkan media pada kategori risiko "
@@ -1040,7 +1040,7 @@ class ForensicReportGenerator:
         story.append(Spacer(1, 0.2 * cm))
 
         disclaimer_text = (
-            "Laporan ini dihasilkan secara otomatis oleh sistem DeepGuard v1.0 menggunakan "
+            "Laporan ini dihasilkan secara otomatis oleh sistem DEFORAG v1.0 menggunakan "
             "metode analisis komputasional berbasis kecerdasan buatan dan teknik forensik digital. "
             "Hasil analisis ini TIDAK menggantikan investigasi forensik digital yang dilakukan oleh "
             "tenaga ahli bersertifikat. Tingkat akurasi sistem bergantung pada kualitas dan jenis "
@@ -1048,7 +1048,7 @@ class ForensicReportGenerator:
             "deepfake yang dapat memberikan jaminan akurasi 100%. "
             "Penggunaan hasil laporan ini untuk kepentingan hukum, investigasi resmi, atau "
             "pengambilan keputusan kritis harus selalu disertai dengan verifikasi independen oleh "
-            "pakar forensik digital berlisensi. Penyedia sistem DeepGuard tidak bertanggung jawab "
+            "pakar forensik digital berlisensi. Penyedia sistem DEFORAG tidak bertanggung jawab "
             "atas kerugian yang timbul akibat penggunaan laporan ini tanpa verifikasi lebih lanjut. "
             "Semua data yang diproses oleh sistem ini bersifat rahasia dan tidak disimpan di server "
             "eksternal manapun."
@@ -1069,7 +1069,7 @@ class ForensicReportGenerator:
 
         footer_data = [[
             Paragraph(
-                f"DeepGuard v1.0 | Laporan Forensik Digital | No: {report_number}",
+                f"DEFORAG v1.0 | Laporan Forensik Digital | No: {report_number}",
                 styles["footer"],
             ),
             Paragraph(

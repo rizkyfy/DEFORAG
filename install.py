@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script instalasi DeepGuard yang sudah diperbaiki untuk Windows.
+Script instalasi DEFORAG yang sudah diperbaiki untuk Windows.
 Mengganti facenet-pytorch dengan mtcnn yang lebih ringan.
 """
 import subprocess, sys
@@ -19,7 +19,7 @@ def pip(packages, extra_args=None):
     result = subprocess.run(cmd, capture_output=True, text=True)
     return result.returncode == 0, result.stderr[:200]
 
-print('🔧 Instalasi DeepGuard (Windows-compatible)\n')
+print('🔧 Instalasi DEFORAG (Windows-compatible)\n')
 
 steps = [
     # (nama, packages, extra_args)
@@ -96,7 +96,7 @@ print(f'\n  {ok_count}/{len(packages_to_check)} package tersedia')
 
 if ok_count >= 7:
     print('\n🚀 Siap dijalankan!')
-    print('   python deepguard.py --input foto.jpg --report')
+    print('   python deforag.py --input foto.jpg --report')
 else:
     print('\n⚠️  Terlalu banyak package yang gagal')
     print('   Coba jalankan: pip install torch timm opencv-python reportlab numpy')

@@ -1,7 +1,7 @@
 """
 ensemble/voting.py
 ------------------
-Sistem Voting Ensemble Tertimbang (Weighted Ensemble Voting) untuk DeepGuard.
+Sistem Voting Ensemble Tertimbang (Weighted Ensemble Voting) untuk DEFORAG.
 
 Strategi: CNN-Dominant with Heuristic Modifiers
 - CNN (EfficientNet-B4, AUC 98.56%) menjadi sinyal utama dengan bobot 55%.
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 class EnsembleVoter:
     """
-    Menggabungkan hasil dari 10 modul analisis DeepGuard menggunakan
+    Menggabungkan hasil dari 10 modul analisis DEFORAG menggunakan
     voting tertimbang (weighted voting) dinamis dengan strategi CNN-dominant
     dan aturan override forensik yang di-gerbang oleh CNN.
     """

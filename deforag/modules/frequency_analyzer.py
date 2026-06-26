@@ -17,7 +17,7 @@ Alur analisis:
   5. Deteksi artefak periodik
   6. Kombinasikan skor menjadi skor kecurigaan tunggal
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 
@@ -44,16 +44,16 @@ except ImportError:
     logger.warning("scipy tidak tersedia. Beberapa fitur analisis frekuensi dinonaktifkan.")
 
 # ---------------------------------------------------------------------------
-# Import utilitas DeepGuard
+# Import utilitas DEFORAG
 # ---------------------------------------------------------------------------
 try:
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 except ImportError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 
 
 # ===========================================================================

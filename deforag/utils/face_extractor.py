@@ -7,7 +7,7 @@ Mendukung dua backend:
   - facenet_pytorch MTCNN (lebih akurat, direkomendasikan)
   - OpenCV Haar Cascade (fallback jika facenet_pytorch tidak tersedia)
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 

@@ -4,17 +4,17 @@ cnn_analyzer.py
 Modul analisis deepfake berbasis Convolutional Neural Network (CNN).
 
 Menggunakan arsitektur EfficientNet-B4 sebagai backbone dengan classifier
-head khusus (DeepGuardModel). Model ini dilatih untuk membedakan gambar
+head khusus (DEFORAGModel). Model ini dilatih untuk membedakan gambar
 asli (REAL) dari gambar hasil rekayasa deepfake (FAKE).
 
 Alur analisis:
   1. Muat gambar atau video
   2. Ekstrak wajah menggunakan FaceExtractor
   3. Preprocessing dengan albumentations (resize + normalisasi ImageNet)
-  4. Inferensi melalui DeepGuardModel
+  4. Inferensi melalui DEFORAGModel
   5. Kembalikan skor, verdict, dan detail
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 
@@ -58,17 +58,17 @@ except ImportError:
     logger.warning("albumentations tidak tersedia. Akan menggunakan preprocessing manual.")
 
 # ---------------------------------------------------------------------------
-# Import utilitas DeepGuard
+# Import utilitas DEFORAG
 # ---------------------------------------------------------------------------
 try:
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 except ImportError:
     # Fallback untuk import relatif (saat dijalankan secara langsung)
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from deepguard.utils.face_extractor import FaceExtractor
-    from deepguard.utils.video_processor import VideoProcessor
+    from deforag.utils.face_extractor import FaceExtractor
+    from deforag.utils.video_processor import VideoProcessor
 
 
 # ===========================================================================
@@ -77,7 +77,7 @@ except ImportError:
 
 if TORCH_AVAILABLE and TIMM_AVAILABLE:
 
-    class DeepGuardModel(nn.Module):
+    class DEFORAGModel(nn.Module):
         """
         Model deepfake detection berbasis EfficientNet-B4.
 
@@ -98,7 +98,7 @@ if TORCH_AVAILABLE and TIMM_AVAILABLE:
                 num_classes=0,      # Hapus classifier head bawaan
                 global_pool="avg",  # Global average pooling → (B, 1792)
             )
-            # Classifier head khusus DeepGuard
+            # Classifier head khusus DEFORAG
             self.classifier = nn.Sequential(
                 nn.Dropout(0.4),
                 nn.Linear(1792, 512),
@@ -128,10 +128,10 @@ if TORCH_AVAILABLE and TIMM_AVAILABLE:
 
 else:
     # Stub jika PyTorch atau timm tidak tersedia
-    class DeepGuardModel:  # type: ignore[no-redef]
+    class DEFORAGModel:  # type: ignore[no-redef]
         """Stub kelas jika PyTorch/timm tidak tersedia."""
         def __init__(self) -> None:
-            raise ImportError("PyTorch dan timm diperlukan untuk DeepGuardModel.")
+            raise ImportError("PyTorch dan timm diperlukan untuk DEFORAGModel.")
 
 
 # ===========================================================================
@@ -187,7 +187,7 @@ def _build_transform(image_size: int = 224):
 
 class CNNAnalyzer:
     """
-    Analyzer deepfake berbasis CNN (EfficientNet-B4 + DeepGuardModel).
+    Analyzer deepfake berbasis CNN (EfficientNet-B4 + DEFORAGModel).
 
     Parameters
     ----------
@@ -287,13 +287,13 @@ class CNNAnalyzer:
             logger.error("Gagal memuat konfigurasi: %s. Menggunakan default.", exc)
             return {"threshold": 0.4983, "image_size": 224}
 
-    def _load_model(self) -> "DeepGuardModel":
+    def _load_model(self) -> "DEFORAGModel":
         """
         Muat bobot model dari file .pth.
 
         Returns
         -------
-        DeepGuardModel
+        DEFORAGModel
             Model dalam mode evaluasi pada device yang ditentukan.
 
         Raises
@@ -308,7 +308,7 @@ class CNNAnalyzer:
                 f"File model tidak ditemukan: {self.model_path}"
             )
 
-        model = DeepGuardModel()
+        model = DEFORAGModel()
 
         try:
             state_dict = torch.load(

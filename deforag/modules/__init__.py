@@ -1,14 +1,14 @@
 """
 modules/__init__.py
 ===================
-Package initializer untuk modul-modul analisis DeepGuard.
+Package initializer untuk modul-modul analisis DEFORAG.
 
 Mengimpor semua kelas analyzer utama sehingga dapat diakses langsung
 dari namespace package:
 
-    from deepguard.modules import CNNAnalyzer, FrequencyAnalyzer, LandmarkAnalyzer
+    from deforag.modules import CNNAnalyzer, FrequencyAnalyzer, LandmarkAnalyzer
 
-Author  : DeepGuard Team
+Author  : ANTENK TEAM
 Version : 1.0.0
 """
 
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 try:
-    from deepguard.modules.cnn_analyzer import CNNAnalyzer
+    from deforag.modules.cnn_analyzer import CNNAnalyzer
     __all__ = ["CNNAnalyzer"]
     logger.debug("CNNAnalyzer berhasil diimpor.")
 except ImportError as e:
@@ -29,7 +29,7 @@ except ImportError as e:
     CNNAnalyzer = None  # type: ignore[assignment,misc]
 
 try:
-    from deepguard.modules.frequency_analyzer import FrequencyAnalyzer
+    from deforag.modules.frequency_analyzer import FrequencyAnalyzer
     __all__ = getattr(__all__, "__iadd__", lambda x: x)(["FrequencyAnalyzer"]) or [
         *(__all__ if __all__ else []), "FrequencyAnalyzer"
     ]
@@ -39,7 +39,7 @@ except ImportError as e:
     FrequencyAnalyzer = None  # type: ignore[assignment,misc]
 
 try:
-    from deepguard.modules.landmark_analyzer import LandmarkAnalyzer
+    from deforag.modules.landmark_analyzer import LandmarkAnalyzer
     logger.debug("LandmarkAnalyzer berhasil diimpor.")
 except ImportError as e:
     logger.warning("Gagal mengimpor LandmarkAnalyzer: %s", e)
@@ -49,4 +49,4 @@ except ImportError as e:
 __all__ = ["CNNAnalyzer", "FrequencyAnalyzer", "LandmarkAnalyzer"]
 
 __version__ = "1.0.0"
-__author__  = "DeepGuard Team"
+__author__  = "ANTENK TEAM"
